@@ -8,7 +8,7 @@ HEIGHT = 600
 
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
-BLUE = (0, 255, 0)
+BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -33,7 +33,7 @@ def button(screen, msg, x, y, w, h, ic, ac) -> bool:
     else:
         pygame.draw.rect(screen, ic, (x, y, w, h), 0)
 
-    myfont = pygame.font.SysFont(msg, 30)
+    myfont = pygame.font.SysFont(None, 30)
     text = myfont.render(msg, True, WHITE)
     screen.blit(text, (x + 20, y + 15))
 

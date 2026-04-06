@@ -51,6 +51,7 @@ def displayarr(state):
 
     '''
     for i in range(ARR_SIZE):
+        check_exit()
         if STATE[i] == 0:       #red
             color=(255, 0, 0)
         elif STATE[i] == 2:     #green

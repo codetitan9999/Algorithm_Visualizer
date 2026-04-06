@@ -6,6 +6,7 @@ from pygame_utilities import *
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Bubble Sort")
 clear_screen(screen)
 
 
@@ -33,6 +34,7 @@ def bubble_sort():
 
     for i in range(arr_size):
         for j in range(arr_size - i - 1):
+            check_exit()
 
             for k in range(arr_size):
                 is_compared = k in (j, j + 1)

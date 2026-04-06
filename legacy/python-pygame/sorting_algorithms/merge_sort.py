@@ -56,6 +56,7 @@ def mergearray(array, l1, r1, r2) :
     right_list = array[l2 : r2 + 1]
 
     while i < len(left_list) and j < len(right_list):
+        check_exit()
         for k in range(arr_size):
             if k==i or k==j:
                 ind1 = i + l1
@@ -157,8 +158,7 @@ if __name__ == '__main__':
         
 
     clear_screen(screen)
-    # generate_array(arr_size)
-    array = [8,3,4,5,2,9,10,12,1,14,15,7,6,13,11]
+    generate_array(arr_size)
     draw_all_bars()
     mergesort(array, 0, arr_size-1)
 

@@ -29,6 +29,10 @@ def displayArr(pivot):
     Displays the array as bars of height equal to the value
     '''
     #time.sleep(1)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            raise SystemExit
 
     window.fill(WHITE) 
 
@@ -61,6 +65,10 @@ def displayGreen():
     '''
 
     for i in range(len(arr)):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                raise SystemExit
 
         color = (0, 255, 0) # green
 
