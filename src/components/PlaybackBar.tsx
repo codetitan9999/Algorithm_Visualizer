@@ -27,8 +27,8 @@ export function PlaybackBar({
     <section className="panel playback-panel">
       <div className="panel-header">
         <div>
-          <p className="panel-eyebrow">Timeline Control</p>
-          <h3>Replay the run</h3>
+          <p className="panel-eyebrow">Playback</p>
+          <h3>Step through the run</h3>
         </div>
         <span className="timeline-badge">
           Step {Math.min(currentStep + 1, totalSteps)} / {totalSteps}
@@ -37,7 +37,7 @@ export function PlaybackBar({
 
       <div className="playback-actions">
         <button type="button" className="secondary-button" onClick={onReset}>
-          Restart
+          Reset
         </button>
         <button
           type="button"
@@ -50,7 +50,7 @@ export function PlaybackBar({
       </div>
 
       <label className="range-field">
-        <span>Step scrubber</span>
+        <span>Step</span>
         <input
           type="range"
           min={0}
@@ -62,7 +62,7 @@ export function PlaybackBar({
       </label>
 
       <label className="range-field">
-        <span>Playback speed: {speedMs} ms</span>
+        <span>Speed: {speedMs} ms</span>
         <input
           type="range"
           min={40}

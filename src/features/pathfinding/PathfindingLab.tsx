@@ -24,10 +24,10 @@ import {
 } from "./utils";
 
 const tools: { id: EditTool; label: string }[] = [
-  { id: "wall", label: "Add obstacles" },
-  { id: "erase", label: "Remove obstacles" },
-  { id: "start", label: "Set origin" },
-  { id: "end", label: "Set destination" },
+  { id: "wall", label: "Walls" },
+  { id: "erase", label: "Erase" },
+  { id: "start", label: "Start" },
+  { id: "end", label: "End" },
 ];
 const pathfindingLegend = [
   { label: "Wall", color: "#1b2738" },
@@ -190,7 +190,7 @@ export function PathfindingLab() {
         <section className="panel">
           <div className="panel-header">
             <div>
-              <p className="panel-eyebrow">Control Rail</p>
+              <p className="panel-eyebrow">Setup</p>
               <h2>{selectedAlgorithm.label}</h2>
             </div>
             <span className="timeline-badge">{selectedAlgorithm.complexity}</span>
@@ -233,10 +233,10 @@ export function PathfindingLab() {
               className="secondary-button"
               onClick={() => updateScenario((current) => ({ ...current, walls: new Set() }))}
             >
-              Clear Obstacles
+              Clear Walls
             </button>
             <button type="button" className="primary-button" onClick={handleRun}>
-              Run Search
+              Run
             </button>
           </div>
 
@@ -246,8 +246,8 @@ export function PathfindingLab() {
         <section className="panel">
           <div className="panel-header">
             <div>
-              <p className="panel-eyebrow">Scenario Builder</p>
-              <h3>Create grid patterns</h3>
+              <p className="panel-eyebrow">Board</p>
+              <h3>Create a layout</h3>
             </div>
           </div>
 
@@ -302,7 +302,7 @@ export function PathfindingLab() {
         <section className="panel stage-panel">
           <div className="panel-header">
             <div>
-              <p className="panel-eyebrow">Execution Trace</p>
+              <p className="panel-eyebrow">Visualization</p>
               <h2>{activeRun.label}</h2>
             </div>
             <div className="stat-row compact">
@@ -350,30 +350,6 @@ export function PathfindingLab() {
           currentDescription={currentStep.description}
           onLanguageChange={setCodeLanguage}
         />
-
-        <section className="insights-grid">
-          <div className="panel">
-            <p className="panel-eyebrow">Run summary</p>
-            <div className="stat-row">
-              <StatPill label="Iterations" value={activeRun.summary.iterations} />
-              <StatPill label="Visited" value={activeRun.summary.visitedCount} />
-              <StatPill
-                label="Solved"
-                value={activeRun.summary.found ? "Yes" : "No"}
-              />
-              <StatPill label="Steps" value={activeRun.summary.totalSteps} />
-            </div>
-          </div>
-
-          <div className="panel">
-            <p className="panel-eyebrow">Board Notes</p>
-            <ul className="signal-list">
-              <li>Drag across the board to paint or erase walls, then reposition origin and destination as needed.</li>
-              <li>A* blends travel cost with a goal-directed heuristic, so the frontier tends to move toward the finish.</li>
-              <li>Dijkstra ignores heuristics and expands by cheapest known cost, making it the clean baseline for comparison.</li>
-            </ul>
-          </div>
-        </section>
       </div>
     </section>
   );

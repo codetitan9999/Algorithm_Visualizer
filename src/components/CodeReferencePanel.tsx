@@ -26,7 +26,7 @@ export function CodeReferencePanel({
     <section className="panel code-panel">
       <div className="panel-header">
         <div>
-          <p className="panel-eyebrow">Reference Deck</p>
+          <p className="panel-eyebrow">Code Reference</p>
           <h2>{reference.title}</h2>
         </div>
         <span className="timeline-badge">{activeSnippet.label}</span>
@@ -64,25 +64,10 @@ export function CodeReferencePanel({
 
         <div className="explanation-column">
           <div className="focus-card">
-            <p className="panel-eyebrow">Current Focus</p>
+            <p className="panel-eyebrow">What Is Happening</p>
             <h3>{activeStage?.title}</h3>
             <p className="focus-text">{activeStage?.description}</p>
             <p className="focus-callout">{currentDescription}</p>
-          </div>
-
-          <div className="stage-list">
-            {reference.stages.map((stage, index) => (
-              <div
-                key={stage.id}
-                className={`stage-item ${stage.id === activeStage?.id ? "active" : ""}`}
-              >
-                <span className="stage-index">{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <strong>{stage.title}</strong>
-                  <p>{stage.description}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

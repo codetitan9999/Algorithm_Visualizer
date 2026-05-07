@@ -1,6 +1,6 @@
 # Algorithm Visualizer
 
-A modern algorithm visualizer rebuilt around dynamic user input, deterministic algorithm timelines, and a cleaner architecture that is easier to discuss in interviews.
+A browser-based algorithm visualizer rebuilt around dynamic user input, deterministic playback, and a simpler interface that is easier for first-time users to explore.
 
 ## Live Deployment
 
@@ -11,6 +11,7 @@ A modern algorithm visualizer rebuilt around dynamic user input, deterministic a
 
 This repository started as a Python + Pygame collection of individual scripts. The new version is a browser-based TypeScript app with:
 
+- A simpler, more beginner-friendly UI for running and replaying algorithms
 - A dedicated sorting studio for user-provided arrays
 - A pathfinding lab with editable start, end, and wall nodes
 - Reusable playback controls for stepping, scrubbing, and speed tuning

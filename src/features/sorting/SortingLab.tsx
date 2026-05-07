@@ -128,7 +128,7 @@ export function SortingLab() {
         <section className="panel">
           <div className="panel-header">
             <div>
-              <p className="panel-eyebrow">Control Rail</p>
+              <p className="panel-eyebrow">Setup</p>
               <h2>{selectedAlgorithm.label}</h2>
             </div>
             <span className="timeline-badge">{selectedAlgorithm.complexity}</span>
@@ -169,10 +169,10 @@ export function SortingLab() {
 
           <div className="button-row">
             <button type="button" className="secondary-button" onClick={handlePreview}>
-              Load Sequence
+              Preview
             </button>
             <button type="button" className="primary-button" onClick={handleVisualize}>
-              Run Analysis
+              Run
             </button>
           </div>
 
@@ -183,8 +183,8 @@ export function SortingLab() {
         <section className="panel">
           <div className="panel-header">
             <div>
-              <p className="panel-eyebrow">Scenario Builder</p>
-              <h3>Create sample input</h3>
+              <p className="panel-eyebrow">Sample Data</p>
+              <h3>Generate a list</h3>
             </div>
           </div>
 
@@ -234,7 +234,7 @@ export function SortingLab() {
         <section className="panel stage-panel">
           <div className="panel-header">
             <div>
-              <p className="panel-eyebrow">Execution Trace</p>
+              <p className="panel-eyebrow">Visualization</p>
               <h2>{run.label}</h2>
             </div>
             <div className="stat-row compact">
@@ -268,27 +268,6 @@ export function SortingLab() {
           currentDescription={currentStep.description}
           onLanguageChange={setCodeLanguage}
         />
-
-        <section className="insights-grid">
-          <div className="panel">
-            <p className="panel-eyebrow">Run summary</p>
-            <div className="stat-row">
-              <StatPill label="Total steps" value={run.summary.totalSteps} />
-              <StatPill label="Final comparisons" value={run.summary.comparisons} />
-              <StatPill label="Final swaps" value={run.summary.swaps} />
-              <StatPill label="Final writes" value={run.summary.writes} />
-            </div>
-          </div>
-
-          <div className="panel">
-            <p className="panel-eyebrow">Execution Signals</p>
-            <ul className="signal-list">
-              <li>The renderer replays precomputed snapshots instead of running algorithm logic during paint.</li>
-              <li>Metrics, narration, and the active code stage stay synchronized across the full timeline.</li>
-              <li>Manual input and generated samples flow through the same execution engine for consistent playback.</li>
-            </ul>
-          </div>
-        </section>
       </div>
     </section>
   );
