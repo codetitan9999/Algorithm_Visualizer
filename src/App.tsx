@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PathfindingLab } from "./features/pathfinding/PathfindingLab";
+import { SearchingLab } from "./features/searching/SearchingLab";
 import { SortingLab } from "./features/sorting/SortingLab";
 
 const labs = [
@@ -8,6 +9,12 @@ const labs = [
     label: "Sorting",
     summary:
       "Enter numbers, pick an algorithm, and watch how the array changes step by step.",
+  },
+  {
+    id: "searching",
+    label: "Searching",
+    summary:
+      "Choose a target and follow how linear and binary search inspect each value.",
   },
   {
     id: "pathfinding",
@@ -47,7 +54,13 @@ export function App() {
         </div>
       </nav>
 
-      {activeLab === "sorting" ? <SortingLab /> : <PathfindingLab />}
+      {activeLab === "sorting" ? (
+        <SortingLab />
+      ) : activeLab === "searching" ? (
+        <SearchingLab />
+      ) : (
+        <PathfindingLab />
+      )}
     </main>
   );
 }
